@@ -1,3 +1,197 @@
+
+<!-- HTML File: index.html -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Durga Traders - किसान भाइयों की पहली पसंद | बुढ़ांसी (अलीगढ़)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="Logo.png" alt="Nav Durga Logo" class="brand-logo">
+                <div class="logo-text"><span class="nav-green">Nav Durga</span> Traders</div>
+            </div>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#" class=active">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-area">
+                <div class="search-input-group">
+                    <input type="text" id="searchInput" placeholder="प्रोडक्ट नाम सर्च करें... (जैसे: Lethal, DAP)" onkeyup="searchProducts()">
+                    <button class="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: 3 Sliders (Left Mini + Middle Main 540x405 + Right Mini) -->
+    <main class="hero-section">
+        <!-- Left Mini Slider - Special Deals -->
+        <aside class="side-slider left-slider">
+            <h3>Special Deals</h3>
+            <div class="mini-slider" id="leftMiniSlider">
+                <div class="mini-slide active">
+                    <img src="product1.jpg" alt="Lethal">
+                    <div class="mini-caption">Lethal Imidacloprid - स्पेशल प्राइस!</div>
+                </div>
+                <div class="mini-slide">
+                    <img src="product2.webp" alt="Farmer Shop">
+                    <div class="mini-caption">किसान भाइयों के लिए बेस्ट डील</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Middle Main Slider - FIXED 540×405 -->
+        <section class="main-slider-wrapper">
+            <div class="main-slider" id="mainSlider">
+                <div class="main-slide active">
+                    <img src="Nav1.png" alt="Shop Interior">
+                    <div class="main-caption">
+                        <h2>नव दुर्गा ट्रेडर्स</h2>
+                        <p>असली उत्पाद • सही दाम • तेज़ सेवा | बुढ़ांसी (अलीगढ़ )</p>
+                    </div>
+                </div>
+                <div class="main-slide">
+                    <img src="Nav2.jpg" alt="PM Fertilizer Bag">
+                    <div class="main-caption">
+                        <h2>प्रधानमंत्री भारतीय जनुरवरक</h2>
+                        <p>सब्सिडी वाली खाद • बेहतर फसल के लिए</p>
+                    </div>
+                </div>
+                <div class="main-slide">
+                    <img src="Nav3.jpg" alt="Farmer">
+                    <div class="main-caption">
+                        <h2>हमारी ताकत - हमारे किसान</h2>
+                        <p>विश्वास और गुणवत्ता के साथ | बुढ़ांसी (अलीगढ़)</p>
+                    </div>
+                </div>
+
+                <!-- Arrows -->
+                <button class="slider-arrow prev" onclick="prevMainSlide()">❮</button>
+                <button class="slider-arrow next" onclick="nextMainSlide()">❯</button>
+
+                <!-- Dots (3 Slides के लिए) -->
+                <div class="slider-indicators">
+                    <span class="indicator active" onclick="goToMainSlide(0)"></span>
+                    <span class="indicator" onclick="goToMainSlide(1)"></span>
+                    <span class="indicator" onclick="goToMainSlide(2)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Mini Slider - New Arrivals -->
+        <aside class="side-slider right-slider">
+            <h3>New Arrivals</h3>
+            <div class="mini-slider" id="rightMiniSlider">
+                <div class="mini-slide active">
+                    <img src="DAP.png" alt="New Fertilizer">
+                    <div class="mini-caption">नई खाद स्टॉक आ गई!</div>
+                </div>
+                <div class="mini-slide">
+                    <img src="UREA.png" alt="DAP & Urea">
+                    <div class="mini-caption">ताजा DAP & Urea उपलब्ध</div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Products Section: Static HTML (3 Products per Row) -->
+    <h2 class="section-title" id="products">Top Selling Products</h2>
+    <div class="products-container" id="productsContainer">
+
+        <!-- Row 1: 3 Products -->
+        <div class="product-row">
+            <div class="product-card">
+                <img src="product1.jpg" alt="Lethal Imidacloprid 17.8% SL">
+                <h3>Lethal Imidacloprid 17.8% SL</h3>
+                <select class="size-select" onchange="updatePrice(this)">
+                    <option value="0" data-price="150" data-old="165" data-discount="9" selected>50 ml - ₹150</option>
+                    <option value="1" data-price="262" data-old="273" data-discount="4">100 ml - ₹262</option>
+                    <option value="2" data-price="620" data-old="680" data-discount="9">250 ml - ₹620</option>
+                </select>
+                <div class="price-display">₹150 <span class="old-price">₹165</span> <span class="discount-badge">9% OFF</span></div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="denitol.jpg" alt="Denitol">
+                <h3>Denitol</h3>
+                <select class="size-select" onchange="updatePrice(this)">
+                    <option value="0" data-price="150" data-old="165" data-discount="9" selected>50 ml - ₹150</option>
+                    <option value="1" data-price="262" data-old="273" data-discount="4">100 ml - ₹262</option>
+                    <option value="2" data-price="620" data-old="680" data-discount="9">250 ml - ₹620</option>
+                </select>
+                <div class="price-display">₹150 <span class="old-price">₹165</span> <span class="discount-badge">9% OFF</span></div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product2.webp" alt="Antracol 70% WP">
+                <h3>Antracol 70% WP</h3>
+                <select class="size-select" onchange="updatePrice(this)">
+                    <option value="0" data-price="280" data-old="320" data-discount="12" selected>250 g - ₹280</option>
+                    <option value="1" data-price="480" data-old="550" data-discount="13">500 g - ₹480</option>
+                </select>
+                <div class="price-display">₹280 <span class="old-price">₹320</span> <span class="discount-badge">12% OFF</span></div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        
+
+        <!-- Row 2: और 3 Products (Copy-paste करके बढ़ा सकते हैं) -->
+         <div class="product-row">
+            <div class="product-card">
+                <img src="Coragen.png" alt="Coragen">
+                <h3>Coragen</h3>
+                <select class="size-select" onchange="updatePrice(this)">
+                    <option value="0" data-price="150" data-old="165" data-discount="9" selected>50 ml - ₹150</option>
+                    <option value="1" data-price="262" data-old="273" data-discount="4">100 ml - ₹262</option>
+                    <option value="2" data-price="620" data-old="680" data-discount="9">250 ml - ₹620</option>
+                </select>
+                <div class="price-display">₹150 <span class="old-price">₹165</span> <span class="discount-badge">9% OFF</span></div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="denitol.jpg" alt="Denitol">
+                <h3>Denitol</h3>
+                <select class="size-select" onchange="updatePrice(this)">
+                    <option value="0" data-price="150" data-old="165" data-discount="9" selected>50 ml - ₹150</option>
+                    <option value="1" data-price="262" data-old="273" data-discount="4">100 ml - ₹262</option>
+                    <option value="2" data-price="620" data-old="680" data-discount="9">250 ml - ₹620</option>
+                </select>
+                <div class="price-display">₹150 <span class="old-price">₹165</span> <span class="discount-badge">9% OFF</span></div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="product2.webp" alt="Antracol 70% WP">
+                <h3>Antracol 70% WP</h3>
+                <select class="size-select" onchange="updatePrice(this)">
+                    <option value="0" data-price="280" data-old="320" data-discount="12" selected>250 g - ₹280</option>
+                    <option value="1" data-price="480" data-old="550" data-discount="13">500 g - ₹480</option>
+                </select>
+                <div class="price-display">₹280 <span class="old-price">₹320</span> <span class="discount-badge">12% OFF</span></div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+=======
 <!-- HTML File: index.html -->
 <!DOCTYPE html>
 <html lang="hi">
@@ -190,4 +384,5 @@
 
     <script src="script.js"></script>
 </body>
+>>>>>>> 55785bc49e18bbe59d273bf3d07d68e83ea771b0
 </html>
